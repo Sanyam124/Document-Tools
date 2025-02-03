@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Flask App{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Document Tools</h1>
+      <nav>
+        <a href="/index">Home</a> | <a href="/about">About</a> |
+        <a href="/contact">Contact</a> | {% if 'username' in session %}
+        <a href="/logout">Logout</a>
+        {% else %}
+        <a href="/login">Login</a>
+        {% endif %}
+      </nav>
+      <nav id="tools">
+        <a href="/ocr">IMAGE OCR</a> | <a href="/pdf">PDF OCR</a>
+      </nav>
+    </header>
+
+    <main>
+      {% block content %}
+      <!-- Page-specific content goes here -->
+      {% endblock %}
+    </main>
+
+    <footer>
+      <p>&copy; 2025 My Flask App</p>
+    </footer>
+  </body>
+</html>

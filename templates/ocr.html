@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block title %}OCR - My Flask App{% endblock %} {%
+block content %}
+<h2>OCR Application</h2>
+
+{% if error %}
+<p style="color: red">{{ error }}</p>
+{% endif %}
+
+<form action="/ocr" method="post" enctype="multipart/form-data">
+  <label for="image">Upload an image:</label><br />
+  <input
+    type="file"
+    id="image"
+    name="image"
+    accept="image/*"
+    required
+  /><br /><br />
+  <input type="submit" value="Extract Text" />
+</form>
+
+{% if extracted_text %}
+<h3>Extracted Text:</h3>
+<pre>{{ extracted_text }}</pre>
+{% endif %} {% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block title %}PDF OCR - My Flask App{% endblock %}
+{% block content %}
+<h2>PDF OCR Application</h2>
+
+{% if error %}
+<p style="color: red">{{ error }}</p>
+{% endif %}
+
+<form action="/pdf" method="post" enctype="multipart/form-data">
+  <label for="pdf">Upload a PDF file:</label><br />
+  <input
+    type="file"
+    id="pdf"
+    name="pdf"
+    accept="application/pdf"
+    required
+  /><br /><br />
+  <input type="submit" value="Extract Text from PDF" />
+</form>
+
+{% if extracted_text %}
+<h3>Extracted Text:</h3>
+<pre>{{ extracted_text }}</pre>
+{% endif %} {% endblock %}

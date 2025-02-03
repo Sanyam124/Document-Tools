@@ -1,0 +1,98 @@
+/* Reset default browser padding and margins */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+/* Navigation Styles */
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ddd;
+}
+
+/* Main Content Styles */
+main {
+  background-color: #fff;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-height: 70vh;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+pre {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border: 1px solid #ccc;
+  white-space: pre-wrap; /* Allows text to wrap within the container */
+  word-wrap: break-word;
+}
+
+#tools{
+  color: aqua;
+}
+
+#tools a {
+  color: aqua;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  nav a {
+    margin: 0 5px;
+    font-size: 0.9rem;
+  }
+  
+  main {
+    margin: 10px;
+    padding: 15px;
+  }
+}
