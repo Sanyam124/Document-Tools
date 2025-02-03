@@ -15,10 +15,13 @@ block content %}
     accept="image/*"
     required
   /><br /><br />
-  <input type="submit" value="Extract Text" />
+  <input type="submit" value="Extract Text From Image" />
 </form>
-
 {% if extracted_text %}
 <h3>Extracted Text:</h3>
 <pre>{{ extracted_text }}</pre>
+<form action="{{ url_for('download_ocr') }}" method="post">
+  <input type="hidden" name="extracted_text" value="{{ extracted_text }}" />
+  <button type="submit">Download Extracted Text</button>
+</form>
 {% endif %} {% endblock %}

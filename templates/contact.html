@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block title %}Contact{% endblock %} {% block
+content %}
+<div class="container">
+  <h2>Contact Us</h2>
+  <p>
+    We'd love to hear from you! If you have any questions, feedback, or
+    suggestions, please feel free to get in touch with us using the form below.
+  </p>
+
+  <h3>Feedback Form</h3>
+  <form action="/contact" method="POST">
+    <div class="form-group">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Your Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-control"
+        value="{{ email }}"
+        required
+        readonly
+      />
+    </div>
+    <div class="form-group">
+      <label for="message">Your Message</label>
+      <textarea
+        id="message"
+        name="message"
+        class="form-control"
+        rows="1"
+        required
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Message</button>
+  </form>
+  {% if success %}
+  <div class="alert alert-success">{{ success }}</div>
+  {% endif %}
+  <h3>Other Ways to Reach Us</h3>
+  <p>
+    If you prefer, you can also reach us via email at
+    <strong>support@documenttools.com</strong> or follow us on social media.
+  </p>
+</div>
+{% endblock %}

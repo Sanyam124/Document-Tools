@@ -1,10 +1,26 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
 %}
-<h1>Home Page</h1>
-<h2>Hello {{ name }}!!</h2>
-<h3>Nice to Meet You</h3>
-<p>
-  Next time, be careful while giving your ID:{{username}} and
-  Password:{{password}}
-</p>
+<div class="container">
+  <h2>Welcome to the Document Tools Platform</h2>
+  <p>
+    Our platform offers powerful tools to extract and process text from images,
+    PDFs, and other documents. You can easily upload documents for OCR
+    processing and download the extracted text.
+  </p>
+
+  <h3>Getting Started</h3>
+  <p>Choose from the following tools to begin:</p>
+  <ul>
+    <li>
+      <a href="{{ url_for('ocr') }}">Image OCR Tool</a> - Upload an image and
+      extract the text.
+    </li>
+    <li>
+      <a href="{{ url_for('pdf') }}">PDF OCR Tool</a> - Upload a PDF and extract
+      the text.
+    </li>
+  </ul>
+
+  <p>We are constantly working to add more features, so stay tuned!</p>
+</div>
 {% endblock %}

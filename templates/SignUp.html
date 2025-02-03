@@ -5,6 +5,9 @@
 <p style="color: red">{{ error }}</p>
 {% endif %}
 <form action="/SignUp" method="post">
+  <label for="email">Email:</label><br />
+  <input type="email" id="email" name="email" required /><br />
+
   <label for="name">Name:</label><br />
   <input type="text" id="name" name="name" required /><br />
 
